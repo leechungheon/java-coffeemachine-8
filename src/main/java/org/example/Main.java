@@ -19,6 +19,9 @@ public class Main {
         int mainMenu = inputHandler.selectMainMenu();
 
         outputHandler.sizeOptionDisplay();
+        int size = inputHandler.selectSize();
+
+
         outputHandler.customOptionDisplay();
     }
 }
