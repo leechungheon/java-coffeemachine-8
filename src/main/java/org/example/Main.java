@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.domain.menu.Coffee;
 import org.example.domain.menu.CoffeeFactory;
+import org.example.domain.menu.CustomOption;
+import org.example.domain.menu.decorator.ExtraShotDecorator;
 import org.example.view.io.InputHandler;
 import org.example.view.io.OutputHandler;
 
@@ -27,5 +29,11 @@ public class Main {
 
         outputHandler.customOptionDisplay();
         int option = inputHandler.selectOption();
+
+        CustomOption customOption = CustomOption.getCustomOptionByCode(option);
+        if(customOption == CustomOption.EXTRA_SHOT){
+            coffee = new ExtraShotDecorator(coffee,customOption);
+        }
+        System.out.println(coffee.getOptions());
     }
 }

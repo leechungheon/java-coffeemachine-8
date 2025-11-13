@@ -8,18 +8,18 @@ public enum CustomOption {
     DECAF(5, "디카페인 변경", 700),
     WHIPPED_CREAM(6, "휘핑 크림 추가", 0);
 
-    private final int id;
+    private final int code;
     private final String displayName;
     private final int extraPrice;
 
-    CustomOption(int id, String displayName, int extraPrice) {
-        this.id = id;
+    CustomOption(int code, String displayName, int extraPrice) {
+        this.code = code;
         this.displayName = displayName;
         this.extraPrice = extraPrice;
     }
 
-    public int getId() {
-        return id;
+    public int getCode() {
+        return code;
     }
 
     public String getDisplayName() {
@@ -28,5 +28,14 @@ public enum CustomOption {
 
     public int getExtraPrice() {
         return extraPrice;
+    }
+
+    public static CustomOption getCustomOptionByCode(int code) {
+        for(CustomOption customOption : CustomOption.values()) {
+            if(customOption.code == code) {
+                return customOption;
+            }
+        }
+        throw new IllegalArgumentException("[ERROR] Invalid code " + code);
     }
 }
