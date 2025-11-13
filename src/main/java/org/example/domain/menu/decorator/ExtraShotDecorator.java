@@ -32,8 +32,8 @@ public class ExtraShotDecorator extends CoffeeDecorator{
     }
 
     @Override
-    public int getPrice() {
-        int existingPrice = super.getPrice();
+    public int getTotalPrice() {
+        int existingPrice = super.getTotalPrice();
 
         int shotPrice = this.customOption.getExtraPrice();
 

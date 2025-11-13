@@ -59,34 +59,9 @@ public class OutputHandler {
 
     public void receiptDisplay(Coffee coffee){
         receiptHeader();
-        Map<CustomOption, Integer> options = coffee.getOptions();
-        int grandTotal = coffee.getPrice();
-
-        int totalOptionCost = 0;
-
-        for (Map.Entry<CustomOption, Integer> entry : options.entrySet()) {
-            CustomOption option = entry.getKey();
-            int quantity = entry.getValue();
-
-            int unitPrice = option.getExtraPrice();
-
-            int lineTotal = unitPrice * quantity;
-            totalOptionCost += lineTotal;
-
-            System.out.printf("%-23s %7d %7d\n", option.getDisplayName(), quantity, lineTotal);
-        }
-
-        int basePrice = grandTotal - totalOptionCost;
-        String baseName = coffee.getName() + " (" + coffee.getSize() + ")";
-
-        // 베이스 커피 내역은 옵션 아래에 별도 항목처럼 출력
-        System.out.printf("%-23s %7d %7d\n", baseName, 1, basePrice);
-
-        // 5. 최종 금액 요약 (영수증 이미지 참고)
-        System.out.println("=".repeat(40));
-
-        System.out.printf("%-25s %15d 원\n", "총 상품 금액 (Grand Total)", grandTotal);
-        System.out.println("=".repeat(40));
+        receiptOptionDisplay(coffee);
+        receiptBaseCoffeeDisplay(coffee);
+        receiptTotalPriceDisplay(coffee);
     }
 
     private void receiptHeader(){
@@ -96,5 +71,31 @@ public class OutputHandler {
 
         System.out.printf("%-25s %7s %7s\n", "상품 / 옵션", "수량", "금액");
         System.out.println("-".repeat(40));
+    }
+
+    private void receiptOptionDisplay(Coffee coffee){
+        Map<CustomOption, Integer> options = coffee.getOptions();
+
+        for (Map.Entry<CustomOption, Integer> entry : options.entrySet()) {
+            CustomOption option = entry.getKey();
+            int quantity = entry.getValue();
+
+            int unitPrice = option.getExtraPrice();
+
+            int lineTotal = unitPrice * quantity;
+
+            System.out.printf("%-23s %7d %7d\n", option.getDisplayName(), quantity, lineTotal);
+        }
+    }
+
+    private void receiptBaseCoffeeDisplay(Coffee coffee){
+        String baseName = coffee.getName() + " (" + coffee.getSize() + ")";
+        System.out.printf("%-23s %7d %7d\n", baseName, 1, coffee.getBaseCoffeePrice());
+    }
+
+    private void receiptTotalPriceDisplay(Coffee coffee){
+        System.out.println("=".repeat(40));
+        System.out.printf("%-25s %15d 원\n", "총 상품 금액 (Grand Total)", coffee.getTotalPrice());
+        System.out.println("=".repeat(40));
     }
 }

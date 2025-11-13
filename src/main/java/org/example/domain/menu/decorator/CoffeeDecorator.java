@@ -28,7 +28,12 @@ public abstract class CoffeeDecorator implements Coffee {
     }
 
     @Override
-    public int getPrice() {
-        return decoratedCoffee.getPrice();
+    public int getTotalPrice() {
+        return decoratedCoffee.getTotalPrice();
+    }
+
+    @Override
+    public int getBaseCoffeePrice() {
+        return decoratedCoffee.getBaseCoffeePrice();
     }
 }

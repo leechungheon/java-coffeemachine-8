@@ -6,5 +6,6 @@ public interface Coffee {
     String getName();
     String getSize();
     Map<CustomOption, Integer> getOptions();
-    int getPrice();
+    int getTotalPrice();
+    int getBaseCoffeePrice();
 }

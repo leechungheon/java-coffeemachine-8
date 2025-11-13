@@ -35,7 +35,12 @@ public class BasicCoffee implements Coffee {
     }
 
     @Override
-    public int getPrice() {
+    public int getTotalPrice() {
+        return price;
+    }
+
+    @Override
+    public int getBaseCoffeePrice() {
         return price;
     }
 }
