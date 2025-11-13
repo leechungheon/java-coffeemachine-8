@@ -24,5 +24,8 @@ public class Main {
         int size = inputHandler.selectSize();
 
         Coffee coffee = CoffeeFactory.createCoffee(mainMenu, size);
+
+        outputHandler.customOptionDisplay();
+        int option = inputHandler.selectOption();
     }
 }

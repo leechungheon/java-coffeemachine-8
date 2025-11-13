@@ -41,6 +41,6 @@ public enum MainMenu {
                 return mainMenu;
             }
         }
-        throw new IllegalArgumentException("[ERROR]Invalid code " + code);
+        throw new IllegalArgumentException("[ERROR] Invalid code " + code);
     }
 }

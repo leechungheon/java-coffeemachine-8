@@ -13,4 +13,9 @@ public class InputHandler {
         Scanner sc = new Scanner(System.in);
         return sc.nextInt();
     }
+
+    public int selectOption(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
 }

@@ -28,7 +28,7 @@ public class CoffeeFactory {
             case FRESH_JUICE:
                 //return new FRESH_JUICE(selectedSize);
             default:
-                throw new IllegalStateException("처리할 수 없는 메뉴입니다: " + selectedMenu.getDisplayName());
+                throw new IllegalStateException("[ERROR] 처리할 수 없는 메뉴입니다: " + selectedMenu.getDisplayName());
         }
     }
 }
