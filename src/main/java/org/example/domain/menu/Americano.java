@@ -1,5 +1,8 @@
 package org.example.domain.menu;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Americano implements Coffee {
 
     private final SizeOption size;
@@ -29,8 +32,8 @@ public class Americano implements Coffee {
     }
 
     @Override
-    public String[] getOptions() {
-        return new String[0];
+    public Map<String, Integer> getOptions() {
+        return new HashMap<>();
     }
 
     @Override

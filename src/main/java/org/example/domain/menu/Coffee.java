@@ -1,8 +1,10 @@
 package org.example.domain.menu;
 
+import java.util.Map;
+
 public interface Coffee {
     String getName();
     String getSize();
-    String[] getOptions();
+    Map<String, Integer> getOptions();
     int getPrice();
 }
