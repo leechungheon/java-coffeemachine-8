@@ -18,10 +18,6 @@ public enum CustomOption {
         this.extraPrice = extraPrice;
     }
 
-    public int getCode() {
-        return code;
-    }
-
     public String getDisplayName() {
         return displayName;
     }

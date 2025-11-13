@@ -3,15 +3,17 @@ package org.example.domain.menu;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Americano implements Coffee {
+public class BasicCoffee implements Coffee {
 
+    private final MainMenu mainMenu;
     private final SizeOption size;
     private final int price;
 
-    public Americano(SizeOption size) {
+    public BasicCoffee(MainMenu mainMenu, SizeOption size) {
+        this.mainMenu = mainMenu;
         this.size = size;
 
-        int basePrice = MainMenu.AMERICANO.getPrice();
+        int basePrice = this.mainMenu.getPrice();
         int sizeIncrement = this.size.getExtraPrice();
 
         this.price = basePrice + sizeIncrement;
@@ -19,7 +21,7 @@ public class Americano implements Coffee {
 
     @Override
     public String getName() {
-        return MainMenu.AMERICANO.getDisplayName();
+        return this.mainMenu.getDisplayName();
     }
 
     @Override
