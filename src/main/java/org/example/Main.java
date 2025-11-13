@@ -4,6 +4,7 @@ import org.example.domain.menu.Coffee;
 import org.example.domain.menu.CoffeeFactory;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.decorator.ExtraShotDecorator;
+import org.example.domain.menu.decorator.SyrupDecorator;
 import org.example.view.io.InputHandler;
 import org.example.view.io.OutputHandler;
 
@@ -28,12 +29,21 @@ public class Main {
         Coffee coffee = CoffeeFactory.createCoffee(mainMenu, size);
 
         outputHandler.customOptionDisplay();
-        int option = inputHandler.selectOption();
+        int option;
+        while(true) {
+            option = inputHandler.selectOption();
+            if(option == 7)break;
 
-        CustomOption customOption = CustomOption.getCustomOptionByCode(option);
-        if(customOption == CustomOption.EXTRA_SHOT){
-            coffee = new ExtraShotDecorator(coffee,customOption);
+            CustomOption customOption = CustomOption.getCustomOptionByCode(option);
+            if (customOption == CustomOption.EXTRA_SHOT) {
+                coffee = new ExtraShotDecorator(coffee, customOption);
+            }else if (customOption == CustomOption.VANILLA_SYRUP){
+                coffee = new SyrupDecorator(coffee, customOption);
+            }else if (customOption == CustomOption.HAZELNUT_SYRUP){
+                coffee = new SyrupDecorator(coffee, customOption);
+            }
         }
         System.out.println(coffee.getOptions());
+        System.out.println(coffee.getPrice());
     }
 }

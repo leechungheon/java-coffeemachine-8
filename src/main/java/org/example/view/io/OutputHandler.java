@@ -42,6 +42,7 @@ public class OutputHandler {
                     option.getExtraPrice()
             );
         }
+        System.out.println("7. 다음");
     }
 
     public void paymentMethodDisplay(){
