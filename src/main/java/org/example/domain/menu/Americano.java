@@ -10,25 +10,21 @@ public class Americano implements Coffee {
 
     public Americano(SizeOption size) {
         this.size = size;
-        this.price = calculateFinalPrice();
-    }
 
-    private int calculateFinalPrice() {
         int basePrice = MainMenu.AMERICANO.getPrice();
-
         int sizeIncrement = this.size.getExtraPrice();
 
-        return basePrice + sizeIncrement;
+        this.price = basePrice + sizeIncrement;
     }
 
     @Override
     public String getName() {
-        return "아메리카노";
+        return MainMenu.AMERICANO.getDisplayName();
     }
 
     @Override
     public String getSize() {
-        return "";
+        return this.size.getDisplayName();
     }
 
     @Override
