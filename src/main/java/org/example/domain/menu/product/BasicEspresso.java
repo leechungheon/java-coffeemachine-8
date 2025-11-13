@@ -1,15 +1,19 @@
-package org.example.domain.menu;
+package org.example.domain.menu.product;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.example.domain.menu.Coffee;
+import org.example.domain.menu.CustomOption;
+import org.example.domain.menu.MainMenu;
+import org.example.domain.menu.SizeOption;
 
-public class BasicCoffee implements Coffee {
+public class BasicEspresso implements Coffee {
 
     private final MainMenu mainMenu;
     private final SizeOption size;
     private final int price;
 
-    public BasicCoffee(MainMenu mainMenu, SizeOption size) {
+    public BasicEspresso(MainMenu mainMenu, SizeOption size) {
         this.mainMenu = mainMenu;
         this.size = size;
 
