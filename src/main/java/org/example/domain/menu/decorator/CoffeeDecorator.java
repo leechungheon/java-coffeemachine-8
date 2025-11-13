@@ -2,6 +2,7 @@ package org.example.domain.menu.decorator;
 
 import java.util.Map;
 import org.example.domain.menu.Coffee;
+import org.example.domain.menu.CustomOption;
 
 public abstract class CoffeeDecorator implements Coffee {
 
@@ -22,7 +23,7 @@ public abstract class CoffeeDecorator implements Coffee {
     }
 
     @Override
-    public Map<String, Integer> getOptions() {
+    public Map<CustomOption, Integer> getOptions() {
         return decoratedCoffee.getOptions();
     }
 

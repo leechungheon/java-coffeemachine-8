@@ -25,10 +25,9 @@ public class SyrupDecorator extends CoffeeDecorator{
     }
 
     @Override
-    public Map<String, Integer> getOptions() {
-        Map<String, Integer> options = new HashMap<>(super.getOptions());
-        String optionName = this.customOption.getDisplayName();
-        options.put(optionName, options.getOrDefault(optionName, 0) + 1);
+    public Map<CustomOption, Integer> getOptions() {
+        Map<CustomOption, Integer> options = new HashMap<>(super.getOptions());
+        options.put(this.customOption, options.getOrDefault(this.customOption, 0) + 1);
         return options;
     }
 

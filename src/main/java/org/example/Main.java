@@ -43,7 +43,6 @@ public class Main {
                 coffee = new SyrupDecorator(coffee, customOption);
             }
         }
-        System.out.println(coffee.getOptions());
-        System.out.println(coffee.getPrice());
+        outputHandler.receiptDisplay(coffee);
     }
 }

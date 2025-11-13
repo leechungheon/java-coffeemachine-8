@@ -30,7 +30,7 @@ public class BasicCoffee implements Coffee {
     }
 
     @Override
-    public Map<String, Integer> getOptions() {
+    public Map<CustomOption, Integer> getOptions() {
         return new HashMap<>();
     }
 

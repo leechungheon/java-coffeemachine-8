@@ -5,6 +5,6 @@ import java.util.Map;
 public interface Coffee {
     String getName();
     String getSize();
-    Map<String, Integer> getOptions();
+    Map<CustomOption, Integer> getOptions();
     int getPrice();
 }
