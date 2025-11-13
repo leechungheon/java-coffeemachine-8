@@ -5,5 +5,4 @@ public interface Coffee {
     String getSize();
     String[] getOptions();
     int getPrice();
-
 }

@@ -34,4 +34,13 @@ public enum MainMenu {
     public boolean isAvailableIced() {
         return isAvailableIced;
     }
+
+    public static MainMenu getMainMenuByCode(int code) {
+        for(MainMenu mainMenu : MainMenu.values()) {
+            if(mainMenu.code == code) {
+                return mainMenu;
+            }
+        }
+        throw new IllegalArgumentException("[ERROR]Invalid code " + code);
+    }
 }

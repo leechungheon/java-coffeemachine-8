@@ -5,18 +5,18 @@ public enum SizeOption {
     LARGE(2, "Large", 500),
     VENTI(3, "Venti", 1000);
 
-    private final int id;
+    private final int code;
     private final String displayName;
     private final int extraPrice;
 
-    SizeOption(int id, String displayName, int extraPrice) {
-        this.id = id;
+    SizeOption(int code, String displayName, int extraPrice) {
+        this.code = code;
         this.displayName = displayName;
         this.extraPrice = extraPrice;
     }
 
-    public int getId() {
-        return id;
+    public int getCode() {
+        return code;
     }
 
     public String getDisplayName() {
@@ -25,5 +25,14 @@ public enum SizeOption {
 
     public int getExtraPrice() {
         return extraPrice;
+    }
+
+    public static SizeOption getSizeOptionByCode(int code) {
+        for(SizeOption option : SizeOption.values()) {
+            if(option.code == code) {
+                return option;
+            }
+        }
+        throw new IllegalArgumentException("[ERROR]Invalid code " + code);
     }
 }
