@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.domain.menu.Coffee;
+import org.example.domain.menu.CoffeeFactory;
 import org.example.view.io.InputHandler;
 import org.example.view.io.OutputHandler;
 
@@ -21,7 +23,6 @@ public class Main {
         outputHandler.sizeOptionDisplay();
         int size = inputHandler.selectSize();
 
-
-        outputHandler.customOptionDisplay();
+        Coffee coffee = CoffeeFactory.createCoffee(mainMenu, size);
     }
 }
