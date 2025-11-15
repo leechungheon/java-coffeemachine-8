@@ -1,22 +1,22 @@
 package org.example.domain.menu;
 
 public enum MainMenu {
-    AMERICANO(1,"아메리카노", 3000, true),
-    CAFE_LATTE(2,"카페 라떼", 4000, true),
-    CAPPUCCINO(3,"카푸치노", 4500, false),
-    CARAMEL_MACCHIATO(4,"카라멜 마끼아또", 5000, true),
-    CAFE_MOCHA(5,"카페 모카", 5000, true),
-    ESPRESSO(6,"에스프레소", 3000, false);
+    AMERICANO(1,"아메리카노", 3000, DrinkType.ESPRESSO_BASED),
+    CAFE_LATTE(2,"카페 라떼", 4000, DrinkType.LATTE_BASED),
+    CAPPUCCINO(3,"카푸치노", 4500, DrinkType.LATTE_BASED),
+    CARAMEL_MACCHIATO(4,"카라멜 마끼아또", 5000, DrinkType.LATTE_BASED),
+    CAFE_MOCHA(5,"카페 모카", 5000, DrinkType.LATTE_BASED),
+    ESPRESSO(6,"에스프레소", 3000, DrinkType.ESPRESSO_BASED);
     private final int code;
     private final String displayName;
     private final int price;
-    private final boolean isAvailableIced;
+    private final DrinkType drinkType;
 
-    MainMenu(int code, String displayName, int price,  boolean isAvailableIced) {
+    MainMenu(int code, String displayName, int price,  DrinkType drinkType) {
         this.code = code;
         this.displayName = displayName;
         this.price = price;
-        this.isAvailableIced = isAvailableIced;
+        this.drinkType = drinkType;
     }
 
     public String getDisplayName() {
@@ -27,8 +27,8 @@ public enum MainMenu {
         return price;
     }
 
-    public boolean isAvailableIced() {
-        return isAvailableIced;
+    public DrinkType getDrinkType() {
+        return drinkType;
     }
 
     public static MainMenu getMainMenuByCode(int code) {

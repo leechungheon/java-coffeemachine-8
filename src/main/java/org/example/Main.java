@@ -1,10 +1,11 @@
 package org.example;
 
 import org.example.domain.menu.Coffee;
-import org.example.domain.menu.factory.CoffeeFactory;
+import org.example.domain.menu.factory.CoffeeMachine;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.decorator.ExtraShotDecorator;
 import org.example.domain.menu.decorator.SyrupDecorator;
+import org.example.domain.menu.factory.MenuFactorySelector;
 import org.example.view.io.InputHandler;
 import org.example.view.io.OutputHandler;
 
@@ -26,7 +27,7 @@ public class Main {
         outputHandler.sizeOptionDisplay();
         int size = inputHandler.selectSize();
 
-        CoffeeFactory factory = MenuFactorySelector.selectFactory(mainMenu); // 클래스, 메서드 구현 필요
+        CoffeeMachine factory = MenuFactorySelector.selectFactory(mainMenu);
 
         Coffee coffee = factory.orderCoffee(mainMenu, size);
 
