@@ -3,6 +3,7 @@ package org.example.domain.menu.factory;
 import org.example.domain.menu.Beverage;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.decorator.ExtraShotDecorator;
+import org.example.domain.menu.decorator.SingleUseDecorator;
 import org.example.domain.menu.decorator.SyrupDecorator;
 
 public class CustomOptionDecoratorFactory {
@@ -11,16 +12,10 @@ public class CustomOptionDecoratorFactory {
         switch (customOption) {
             case EXTRA_SHOT:
                 return new ExtraShotDecorator(beverage, customOption);
-            case VANILLA_SYRUP:
+            case VANILLA_SYRUP, HAZELNUT_SYRUP:
                 return new SyrupDecorator(beverage, customOption);
-            case HAZELNUT_SYRUP:
-                return new SyrupDecorator(beverage, customOption);
-            case SOY_MILK:
-                return new SyrupDecorator(beverage, customOption);
-            case DECAF:
-                return new SyrupDecorator(beverage, customOption);
-            case WHIPPED_CREAM:
-                return new SyrupDecorator(beverage, customOption);
+            case SOY_MILK, DECAF, WHIPPED_CREAM:
+                return new SingleUseDecorator(beverage, customOption);
             default:
                 return beverage;
         }
