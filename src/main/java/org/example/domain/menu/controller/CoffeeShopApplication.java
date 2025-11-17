@@ -23,14 +23,14 @@ public class CoffeeShopApplication {
         int mainMenu = selectMainMenu();
         int size = selectBeverageSize();
 
-        // 2. 음료 객체 생성 (팩토리 패턴)
+        // 2. 음료 객체 생성 (팩토리 메서드 패턴, 템플릿 메서드 패턴)
         BeverageMachine beverageMachine = MenuFactorySelector.selectFactory(mainMenu);
         Beverage beverage = beverageMachine.orderCoffee(mainMenu, size);
 
         // 3. 커스텀 옵션 적용 (데코레이터 패턴)
         beverage = applyCustomOptions(beverage);
 
-        // 4. 결과 출력
+        // 4. 결과 영수증 출력 (퍼사드 패턴)
         outputHandler.receiptDisplay(beverage);
     }
 
@@ -47,14 +47,16 @@ public class CoffeeShopApplication {
     private Beverage applyCustomOptions(Beverage beverage) {
         outputHandler.customOptionDisplay();
         Beverage currentBeverage = beverage;
-        int option;
 
         while (true) {
-            option = inputHandler.selectOption();
-            if (option == 7) break;
-
-            CustomOption customOption = CustomOption.getCustomOptionByCode(option);
-            currentBeverage = CustomOptionDecoratorFactory.createDecorator(currentBeverage, customOption);
+            int option = inputHandler.selectOption();
+            if (option == 0) break;
+            try {
+                CustomOption customOption = CustomOption.getCustomOptionByCode(option);
+                currentBeverage = CustomOptionDecoratorFactory.createDecorator(currentBeverage, customOption);
+            }catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
         return currentBeverage;
     }

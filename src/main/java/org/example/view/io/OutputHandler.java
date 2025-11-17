@@ -43,7 +43,7 @@ public class OutputHandler {
                     option.getExtraPrice()
             );
         }
-        System.out.println("7. 다음");
+        System.out.println("0. 다음");
     }
 
     public void receiptDisplay(Beverage beverage){
