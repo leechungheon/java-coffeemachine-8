@@ -12,7 +12,6 @@ public class MenuFactorySelector {
         return switch (type) {
             case COFFEE -> new CoffeeMachine();
             case NON_COFFEE -> new BlenderMachine();
-            default -> throw new IllegalArgumentException("지원되지 않는 메뉴 타입입니다: " + menu.getDisplayName());
         };
     }
 }

@@ -2,7 +2,7 @@ package org.example.domain.menu.decorator;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.example.domain.menu.Beverage;
+import org.example.domain.menu.product.Beverage;
 import org.example.domain.menu.CustomOption;
 
 public class SyrupDecorator extends BeverageDecorator {

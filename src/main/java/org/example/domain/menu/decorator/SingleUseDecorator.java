@@ -2,7 +2,7 @@ package org.example.domain.menu.decorator;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.example.domain.menu.Beverage;
+import org.example.domain.menu.product.Beverage;
 import org.example.domain.menu.CustomOption;
 
 public class SingleUseDecorator extends BeverageDecorator {
@@ -11,7 +11,15 @@ public class SingleUseDecorator extends BeverageDecorator {
 
     public SingleUseDecorator(Beverage beverage, CustomOption customOption) {
         super(beverage);
+        isValidatedOption(beverage, customOption);
         this.customOption = customOption;
+    }
+
+    public void isValidatedOption(Beverage beverage, CustomOption customOption){
+        Map<CustomOption, Integer> options = new HashMap<>(super.getOptions());
+        if(options.containsKey(customOption)){
+            throw new IllegalArgumentException("[ERROR] 이미 선택한 옵션입니다.");
+        }
     }
 
     @Override

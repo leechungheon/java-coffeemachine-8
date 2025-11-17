@@ -1,7 +1,7 @@
 package org.example.domain.menu.decorator;
 
 import java.util.Map;
-import org.example.domain.menu.Beverage;
+import org.example.domain.menu.product.Beverage;
 import org.example.domain.menu.CustomOption;
 
 public abstract class BeverageDecorator implements Beverage {

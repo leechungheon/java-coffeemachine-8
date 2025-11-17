@@ -1,6 +1,7 @@
-package org.example.domain.menu;
+package org.example.domain.menu.product;
 
 import java.util.Map;
+import org.example.domain.menu.CustomOption;
 
 public interface Beverage {
     String getName();

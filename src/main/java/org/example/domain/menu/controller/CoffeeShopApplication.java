@@ -1,6 +1,6 @@
 package org.example.domain.menu.controller;
 
-import org.example.domain.menu.Beverage;
+import org.example.domain.menu.product.Beverage;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.factory.BeverageMachine;
 import org.example.domain.menu.factory.CustomOptionDecoratorFactory;

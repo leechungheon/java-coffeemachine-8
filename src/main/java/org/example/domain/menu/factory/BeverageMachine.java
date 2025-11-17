@@ -1,6 +1,6 @@
 package org.example.domain.menu.factory;
 
-import org.example.domain.menu.Beverage;
+import org.example.domain.menu.product.Beverage;
 
 public abstract class BeverageMachine {
 

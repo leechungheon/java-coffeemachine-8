@@ -1,6 +1,7 @@
 package org.example.view.io;
 import java.util.Map;
 import org.example.domain.menu.*;
+import org.example.domain.menu.product.Beverage;
 
 public class OutputHandler {
     public void menuDisplay(){
