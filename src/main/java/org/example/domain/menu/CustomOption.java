@@ -4,8 +4,8 @@ public enum CustomOption {
     EXTRA_SHOT(1, "샷 추가", 500),
     VANILLA_SYRUP(2, "바닐라 시럽 추가", 500),
     HAZELNUT_SYRUP(3, "헤이즐넛 시럽 추가", 500),
-    SOY_MILK(4, "두유 변경", 500),
-    DECAF(5, "디카페인 변경", 700),
+    SOY_MILK(4, "두유 변경", 500), // 라떼만 출력
+    DECAF(5, "디카페인 변경", 700), // 커피 메뉴만 출력
     WHIPPED_CREAM(6, "휘핑 크림 추가", 0);
 
     private final int code;

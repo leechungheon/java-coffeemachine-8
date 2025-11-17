@@ -6,7 +6,10 @@ public enum MainMenu {
     CAPPUCCINO(3,"카푸치노", 4500, DrinkType.COFFEE),
     CARAMEL_MACCHIATO(4,"카라멜 마끼아또", 5000, DrinkType.COFFEE),
     CAFE_MOCHA(5,"카페 모카", 5000, DrinkType.COFFEE),
-    ESPRESSO(6,"에스프레소", 3000, DrinkType.COFFEE);
+    ESPRESSO(6,"에스프레소", 3000, DrinkType.COFFEE),
+    GREEN_TEA_LATTE(7, "그린티 라떼", 4500, DrinkType.NON_COFFEE),
+    STRAWBERRY_SMOOTHIE(8, "딸기 스무디", 5500, DrinkType.NON_COFFEE),
+    LEMON_ADE(9, "레몬 에이드", 5000, DrinkType.NON_COFFEE);
     private final int code;
     private final String displayName;
     private final int price;
