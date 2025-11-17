@@ -3,19 +3,60 @@ package org.example.view.io;
 import java.util.Scanner;
 
 public class InputHandler {
-    // 각 입력은 해당 enum 클래스 id 의 범위를 넘어서면 안됨
     public int selectMainMenu(){
-        Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
+        while(true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                int input = sc.nextInt();
+                isValidateMainMenuRange(input);
+                return input;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private void isValidateMainMenuRange(int number){
+        if(number < 1 || number > 9){
+            throw new IllegalArgumentException("[ERROR] Invalid code " + number);
+        }
     }
 
     public int selectSize(){
-        Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
+        while(true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                int input = sc.nextInt();
+                isValidateSizeRange(input);
+                return input;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private void isValidateSizeRange(int number){
+        if(number < 1 || number > 3){
+            throw new IllegalArgumentException("[ERROR] Invalid code " + number);
+        }
     }
 
     public int selectOption(){
-        Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
+        while(true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                int input = sc.nextInt();
+                isValidateOptionRange(input);
+                return input;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private void isValidateOptionRange(int number){
+        if(number < 0 || number > 6){
+            throw new IllegalArgumentException("[ERROR] Invalid code " + number);
+        }
     }
 }
