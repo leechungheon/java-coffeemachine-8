@@ -2,15 +2,15 @@ package org.example.domain.menu.decorator;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.example.domain.menu.Coffee;
+import org.example.domain.menu.Beverage;
 import org.example.domain.menu.CustomOption;
 
-public class ExtraShotDecorator extends CoffeeDecorator{
+public class ExtraShotDecorator extends BeverageDecorator {
 
     private final CustomOption customOption;
 
-    public ExtraShotDecorator(Coffee coffee, CustomOption customOption) {
-        super(coffee);
+    public ExtraShotDecorator(Beverage beverage, CustomOption customOption) {
+        super(beverage);
         this.customOption = customOption;
     }
 

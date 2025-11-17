@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.domain.menu.Coffee;
-import org.example.domain.menu.factory.CoffeeMachine;
+import org.example.domain.menu.Beverage;
+import org.example.domain.menu.factory.beverageMachine;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.decorator.ExtraShotDecorator;
 import org.example.domain.menu.decorator.SyrupDecorator;
@@ -27,9 +27,9 @@ public class Main {
         outputHandler.sizeOptionDisplay();
         int size = inputHandler.selectSize();
 
-        CoffeeMachine factory = MenuFactorySelector.selectFactory(mainMenu);
+        beverageMachine beverageMachine = MenuFactorySelector.selectFactory(mainMenu);
 
-        Coffee coffee = factory.orderCoffee(mainMenu, size);
+        Beverage beverage = beverageMachine.orderCoffee(mainMenu, size);
 
         outputHandler.customOptionDisplay();
         int option;
@@ -39,13 +39,13 @@ public class Main {
 
             CustomOption customOption = CustomOption.getCustomOptionByCode(option);
             if (customOption == CustomOption.EXTRA_SHOT) {
-                coffee = new ExtraShotDecorator(coffee, customOption);
+                beverage = new ExtraShotDecorator(beverage, customOption);
             }else if (customOption == CustomOption.VANILLA_SYRUP){
-                coffee = new SyrupDecorator(coffee, customOption);
+                beverage = new SyrupDecorator(beverage, customOption);
             }else if (customOption == CustomOption.HAZELNUT_SYRUP){
-                coffee = new SyrupDecorator(coffee, customOption);
+                beverage = new SyrupDecorator(beverage, customOption);
             }
         }
-        outputHandler.receiptDisplay(coffee);
+        outputHandler.receiptDisplay(beverage);
     }
 }

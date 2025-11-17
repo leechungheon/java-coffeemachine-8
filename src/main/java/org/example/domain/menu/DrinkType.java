@@ -1,7 +1,6 @@
 package org.example.domain.menu;
 
 public enum DrinkType {
-    LATTE_BASED,
-    ESPRESSO_BASED,
+    COFFEE,
     NON_COFFEE
 }

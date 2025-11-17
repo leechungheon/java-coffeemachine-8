@@ -2,7 +2,7 @@ package org.example.domain.menu;
 
 import java.util.Map;
 
-public interface Coffee {
+public interface Beverage {
     String getName();
     String getSize();
     Map<CustomOption, Integer> getOptions();

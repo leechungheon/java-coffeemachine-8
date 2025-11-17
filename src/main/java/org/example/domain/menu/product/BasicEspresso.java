@@ -2,12 +2,12 @@ package org.example.domain.menu.product;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.example.domain.menu.Coffee;
+import org.example.domain.menu.Beverage;
 import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.MainMenu;
 import org.example.domain.menu.SizeOption;
 
-public class BasicEspresso implements Coffee {
+public class BasicEspresso implements Beverage {
 
     private final MainMenu mainMenu;
     private final SizeOption size;

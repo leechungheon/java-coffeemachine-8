@@ -1,12 +1,12 @@
 package org.example.domain.menu;
 
 public enum MainMenu {
-    AMERICANO(1,"아메리카노", 3000, DrinkType.ESPRESSO_BASED),
-    CAFE_LATTE(2,"카페 라떼", 4000, DrinkType.LATTE_BASED),
-    CAPPUCCINO(3,"카푸치노", 4500, DrinkType.LATTE_BASED),
-    CARAMEL_MACCHIATO(4,"카라멜 마끼아또", 5000, DrinkType.LATTE_BASED),
-    CAFE_MOCHA(5,"카페 모카", 5000, DrinkType.LATTE_BASED),
-    ESPRESSO(6,"에스프레소", 3000, DrinkType.ESPRESSO_BASED);
+    AMERICANO(1,"아메리카노", 3000, DrinkType.COFFEE),
+    CAFE_LATTE(2,"카페 라떼", 4000, DrinkType.COFFEE),
+    CAPPUCCINO(3,"카푸치노", 4500, DrinkType.COFFEE),
+    CARAMEL_MACCHIATO(4,"카라멜 마끼아또", 5000, DrinkType.COFFEE),
+    CAFE_MOCHA(5,"카페 모카", 5000, DrinkType.COFFEE),
+    ESPRESSO(6,"에스프레소", 3000, DrinkType.COFFEE);
     private final int code;
     private final String displayName;
     private final int price;

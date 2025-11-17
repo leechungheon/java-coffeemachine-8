@@ -46,22 +46,11 @@ public class OutputHandler {
         System.out.println("7. 다음");
     }
 
-    public void paymentMethodDisplay(){
-        System.out.println("(필수)결제 방식을 선택하세요.");
-        System.out.println("1. 카드 결제");
-        System.out.println("2. 페이/간편 결제");
-        System.out.println("3. 현금 결제");
-    }
-
-    public void confirmOrderDisplay(){
-        System.out.println("주문하시겠습니까? (y/n)");
-    }
-
-    public void receiptDisplay(Coffee coffee){
+    public void receiptDisplay(Beverage beverage){
         receiptHeader();
-        receiptOptionDisplay(coffee);
-        receiptBaseCoffeeDisplay(coffee);
-        receiptTotalPriceDisplay(coffee);
+        receiptOptionDisplay(beverage);
+        receiptBaseCoffeeDisplay(beverage);
+        receiptTotalPriceDisplay(beverage);
     }
 
     private void receiptHeader(){
@@ -73,8 +62,8 @@ public class OutputHandler {
         System.out.println("-".repeat(40));
     }
 
-    private void receiptOptionDisplay(Coffee coffee){
-        Map<CustomOption, Integer> options = coffee.getOptions();
+    private void receiptOptionDisplay(Beverage beverage){
+        Map<CustomOption, Integer> options = beverage.getOptions();
 
         for (Map.Entry<CustomOption, Integer> entry : options.entrySet()) {
             CustomOption option = entry.getKey();
@@ -88,14 +77,14 @@ public class OutputHandler {
         }
     }
 
-    private void receiptBaseCoffeeDisplay(Coffee coffee){
-        String baseName = coffee.getName() + " (" + coffee.getSize() + ")";
-        System.out.printf("%-23s %7d %7d\n", baseName, 1, coffee.getBaseCoffeePrice());
+    private void receiptBaseCoffeeDisplay(Beverage beverage){
+        String baseName = beverage.getName() + " (" + beverage.getSize() + ")";
+        System.out.printf("%-23s %7d %7d\n", baseName, 1, beverage.getBaseCoffeePrice());
     }
 
-    private void receiptTotalPriceDisplay(Coffee coffee){
+    private void receiptTotalPriceDisplay(Beverage beverage){
         System.out.println("=".repeat(40));
-        System.out.printf("%-25s %15d 원\n", "총 상품 금액 (Grand Total)", coffee.getTotalPrice());
+        System.out.printf("%-25s %15d 원\n", "총 상품 금액 (Grand Total)", beverage.getTotalPrice());
         System.out.println("=".repeat(40));
     }
 }
