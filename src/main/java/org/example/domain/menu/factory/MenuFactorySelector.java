@@ -4,7 +4,7 @@ import org.example.domain.menu.DrinkType;
 import org.example.domain.menu.MainMenu;
 
 public class MenuFactorySelector {
-    public static beverageMachine selectFactory(int menuCode) {
+    public static BeverageMachine selectFactory(int menuCode) {
         MainMenu menu = MainMenu.getMainMenuByCode(menuCode);
 
         DrinkType type = menu.getDrinkType();

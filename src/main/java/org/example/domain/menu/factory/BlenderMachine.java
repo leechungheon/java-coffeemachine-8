@@ -5,7 +5,7 @@ import org.example.domain.menu.MainMenu;
 import org.example.domain.menu.SizeOption;
 import org.example.domain.menu.product.BasicNonCoffee;
 
-public class BlenderMachine extends beverageMachine {
+public class BlenderMachine extends BeverageMachine {
 
     @Override
     protected Beverage createBeverageProduct(int menuCode, int sizeCode) {

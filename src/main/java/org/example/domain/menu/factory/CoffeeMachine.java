@@ -5,7 +5,7 @@ import org.example.domain.menu.Beverage;
 import org.example.domain.menu.MainMenu;
 import org.example.domain.menu.SizeOption;
 
-public class CoffeeMachine extends beverageMachine {
+public class CoffeeMachine extends BeverageMachine {
 
     @Override
     protected Beverage createBeverageProduct(int menuCode, int sizeCode) {
