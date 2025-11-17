@@ -33,7 +33,7 @@ public abstract class BeverageDecorator implements Beverage {
     }
 
     @Override
-    public int getBaseCoffeePrice() {
-        return decoratedBeverage.getBaseCoffeePrice();
+    public int getBaseBeveragePrice() {
+        return decoratedBeverage.getBaseBeveragePrice();
     }
 }

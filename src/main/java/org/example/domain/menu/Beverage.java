@@ -7,5 +7,5 @@ public interface Beverage {
     String getSize();
     Map<CustomOption, Integer> getOptions();
     int getTotalPrice();
-    int getBaseCoffeePrice();
+    int getBaseBeveragePrice();
 }

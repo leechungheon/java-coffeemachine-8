@@ -79,7 +79,7 @@ public class OutputHandler {
 
     private void receiptBaseCoffeeDisplay(Beverage beverage){
         String baseName = beverage.getName() + " (" + beverage.getSize() + ")";
-        System.out.printf("%-23s %7d %7d\n", baseName, 1, beverage.getBaseCoffeePrice());
+        System.out.printf("%-23s %7d %7d\n", baseName, 1, beverage.getBaseBeveragePrice());
     }
 
     private void receiptTotalPriceDisplay(Beverage beverage){

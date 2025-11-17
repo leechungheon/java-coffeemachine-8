@@ -7,13 +7,13 @@ import org.example.domain.menu.CustomOption;
 import org.example.domain.menu.MainMenu;
 import org.example.domain.menu.SizeOption;
 
-public class BasicEspresso implements Beverage {
+public class BasicNonCoffee implements Beverage {
 
     private final MainMenu mainMenu;
     private final SizeOption size;
     private final int price;
 
-    public BasicEspresso(MainMenu mainMenu, SizeOption size) {
+    public BasicNonCoffee(MainMenu mainMenu, SizeOption size) {
         this.mainMenu = mainMenu;
         this.size = size;
 
@@ -44,7 +44,7 @@ public class BasicEspresso implements Beverage {
     }
 
     @Override
-    public int getBaseCoffeePrice() {
+    public int getBaseBeveragePrice() {
         return price;
     }
 }
